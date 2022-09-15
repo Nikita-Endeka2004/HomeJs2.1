@@ -1,8 +1,4 @@
 
-
-
-    let ICAOInput = "KLBG";
-
 let ICAO = {
 
     a: 'Alfa',
@@ -30,16 +26,35 @@ let ICAO = {
     w: 'Whiskey',
     x: 'X-Ray',
     y: 'Yankee',
-    z: 'Zulu'
+    z: 'Zulu',
+    "1": "One",
+    "2": "Two",
+    "3": "Three",
+    "4": "Four",
+    "5": "Five",
+    "6": "Six",
+    "7": "Seven",
+    "8": "Eight",
+    "9": "Nine"
 
 }
 
-let newICAO = ICAOInput.toLowerCase();
+function IcaoTranslat(){
+
+    let ICAOInput = numberInput.value;
+
+    let newICAO = ICAOInput.toLowerCase();
 
   let str = newICAO.split('');
 
-  console.log(str);
+  newICAO = ' ';
 
-  console.log(ICAO[newICAO]);
+  for(let i = 0; i < str.length; i++){
 
+    newICAO = newICAO + ICAO[str[i]] + " ";
 
+  }
+
+  indexInput.innerHTML = `${newICAO}`;
+
+}
